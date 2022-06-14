@@ -1,0 +1,31 @@
+{
+  "name": "filme",
+  "version": "1.0.0",
+  "description": "Filme",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "author": "DFF",
+  "license": "MIT",
+  "devDependencies": {
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "sequelize": "^6.20.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dffrigo/mytrip.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dffrigo/mytrip/issues"
+  },
+  "homepage": "https://github.com/dffrigo/mytrip#readme"
+}

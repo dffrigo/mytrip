@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('./components/head') %>
+
+<body>
+    <header>
+        
+        <%- include('./components/nav') %>
+    </header>
+    
+    <main>
+
+        <div class="container">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/editar/<%= trip.id %>">
+
+                <div class="item">
+                    <input type="text" placeholder="" name="city" value="<%= trip.city %>" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="" name="country" value="<%= trip.country %>" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="" name="location_name" value="<%= trip.location_name %>" required>
+                </div>
+                <div class="item">
+                    <textarea placeholder="" name="summary" ><%= trip.summary %></textarea>
+                </div>
+                <div class="item">
+                    <input type="text" placeholder="" name="image" value="<%= trip.image %>" required>
+                </div>
+                <div class="item">
+                    <Button type="submit">Save?</Button>
+                </div>
+                
+            </form>
+        </div>
+
+        </main>
+    
+       
+  
+    <script src="/js/script.js"></script> 
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <%- include('./components/head') %>
+<body>
+    <header>
+        <h1>Trips</h1>
+        <%- include('./components/nav') %>      
+    </header>
+    <main>
+        <div class="container">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/create">
+
+                <div class="item">
+                    <input type="text" placeholder="" name="city" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="" name="country" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="" name="location_name" required>
+                </div>
+                
+                <div class="item">
+                    <textarea placeholder="Trip summary" name="summary"></textarea>
+                </div>
+                <div class="item">
+                    <input type="text" placeholder="Insert URL image" name="image" required>
+                </div>
+                <div class="item">
+                    <Button type="submit">Insert</Button>
+                </div>               
+            </form>
+        </div>
+    </main>
+    
+    <script src="./js/script.js"></script> 
+</body>
+</html>

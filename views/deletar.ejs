@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('./components/head') %>
+
+<body>
+    <header>
+        
+        <%- include('./components/nav') %>
+    </header>
+    <main>
+        <div class="container">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/deletar/<%= trip.id %>">
+                <div class="item">
+                    <h2>Are you sure to delete this item?</h2>
+                    <span class="delecao"> <%= trip.name %> 
+                    </span>
+                </div>
+                <div class="item">
+                    <img src="<%= trip.image %>" alt="">
+                </div>
+                <div class="item">
+                    <a href="/trips/<%= trip.id %>" class="cancelar">Cancel</a>
+                    <button type="submit">Delete?</button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+    
+       
+   
+    <script src="/js/script.js"></script> 
+</body>
+</html>

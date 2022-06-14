@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+    <%- include('./components/head') %>
+    
+<body>
+    <header>
+       
+        <%- include('./components/nav') %>
+        
+    </header>
+    <main>
+        <div class="container">
+            <span><% if(message != ""){ message } %></span>
+            <form method="POST" action="/criacao">
+
+                <div class="item">
+                    <input type="text" placeholder="Name of city" name="city" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="Country" name="country" required>
+                </div>
+
+                <div class="item">
+                    <input type="text" placeholder="Location" name="location_name" required>
+                </div>
+                <div class="item">
+                    <textarea placeholder="Summary" name="summary"></textarea>
+                </div>
+                <div class="item">
+                    <input type="text" placeholder="Image from web" name="image" required>
+                </div>
+                <div class="item">
+                    <Button type="submit">Add</Button>
+                </div>
+                
+            </form>
+        </div>
+    </main>
+   
+    <script src="/js/script.js"></script> 
+</body>
+</html>

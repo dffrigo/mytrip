@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <%- include('./components/head') %>
+
+  <body>
+    <header>
+      
+      <%- include('./components/nav') %> 
+      <% if(message != "") {%>
+      <%-include('./components/alerts') %> 
+      <% } %>
+
+      <div>
+        <p class="intro">
+          Dear guests! This is a summary of wonderful locations that I once visited. Enjoy!
+        </p>
+      </div>
+      
+    </header>
+
+    <main>
+      <!-- comparação para ver se acha a viagem na pesquisa, por isso o uso do if e else -->
+      <% if (tripSearch.length == 0){ %>
+      <div class="container">
+        <% trips.forEach((trip) => { %>
+        <div class="item">
+          <h2><%= trip.location_name %></h2>
+          <p><%= trip.city %></p>
+          <p>- <%= trip.country %> -</p>
+          <a href="/trips/<%= trip.id %>"
+            ><img class="imgmain" src="<%= trip.image %>" alt="" 
+          /></a>
+         
+        </div>
+        <% }) %>
+      </div>
+
+      <% } else { %>
+      <section class="result">
+        <div id="result-search-space">
+          <h2>Resultados da Pesquisa</h2>
+          <a href="/">Trips</a>
+        </div>
+      </section>
+
+      <div class="container">
+        <% tripSearch.forEach((trip) => { %>
+        <div class="item">
+          <h2><%= trip.location_name %></h2>
+          <p><%= trip.summary %></p>
+          <a href="/trips/<%= trip.id %>"
+            ><img src="<%= trip.image %>" alt=""
+          /></a>
+        </div>
+        <% }) %>
+      </div>
+      <% } %>
+    </main>
+
+    
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
