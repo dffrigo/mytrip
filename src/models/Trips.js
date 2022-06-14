@@ -40,4 +40,10 @@ const Trip = database.sequelize.define(
     }
 );
 
+const initTable = async () => {
+    await Trip.sync();
+}
+initTable();
+
+
 module.exports = Trip;//exportar a Viagem
